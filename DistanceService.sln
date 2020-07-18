@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{85
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Client", "src\Services\CTeleport.Client\CTeleport.Client.csproj", "{3BBBD57D-AB34-4001-9323-18CF9E22EFF2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2476299C-1AC3-42BC-BA28-90E3F87F0E43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "src\Tests\Application.Tests\Application.Tests.csproj", "{2354F31B-9AC1-412F-B8AA-C927F5168B8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,8 +48,13 @@ Global
 		{3BBBD57D-AB34-4001-9323-18CF9E22EFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BBBD57D-AB34-4001-9323-18CF9E22EFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BBBD57D-AB34-4001-9323-18CF9E22EFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2354F31B-9AC1-412F-B8AA-C927F5168B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2354F31B-9AC1-412F-B8AA-C927F5168B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2354F31B-9AC1-412F-B8AA-C927F5168B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2354F31B-9AC1-412F-B8AA-C927F5168B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3BBBD57D-AB34-4001-9323-18CF9E22EFF2} = {85552004-AB23-47D3-833D-6130CA8FD73C}
+		{2354F31B-9AC1-412F-B8AA-C927F5168B8D} = {2476299C-1AC3-42BC-BA28-90E3F87F0E43}
 	EndGlobalSection
 EndGlobal

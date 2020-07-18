@@ -29,6 +29,8 @@ namespace DistanceService.Application.Services
 
         public double ToMiles(double meters)
         {
+            if (meters < 0) throw new ArgumentOutOfRangeException(nameof(meters));
+
             return meters * 0.0006213712;
         }
 
