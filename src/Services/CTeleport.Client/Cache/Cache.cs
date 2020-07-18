@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CTeleport.Client.Interfaces;
 
@@ -5,30 +6,34 @@ namespace CTeleport.Client.Cache
 {
     public class Cache : ICache
     {
-        private Dictionary<string, string> _repository;
+        private Dictionary<string, CachedItem> _repository;
 
-        private IDictionary<string, string> Repository => _repository ??= new Dictionary<string, string>();
+        private IDictionary<string, CachedItem> Repository => _repository ??= new Dictionary<string, CachedItem>();
 
         public bool Exists(string key)
         {
             return Repository.ContainsKey(key);
         }
 
-        public void PutCachedData(string key, string data)
+        public void PutCachedData(string key, string data, int expiredInMinutes)
         {
+            var item = new CachedItem(data, DateTime.UtcNow.AddMinutes(expiredInMinutes));
             if (Exists(key))
             {
-                Repository[key] = data;
+                Repository[key] = item;
             }
             else
             {
-                Repository.Add(key, data);
+                Repository.Add(key, item);
             }
         }
 
         public string GetCachedData(string key)
         {
-            return Exists(key) ? Repository[key] : null;
+            if (!Exists(key)) return null;
+
+            var item = Repository[key];
+            return item.Expired > DateTime.UtcNow ? item.Value : null;
         }
     }
 }

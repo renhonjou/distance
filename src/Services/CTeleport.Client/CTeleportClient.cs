@@ -46,7 +46,7 @@ namespace CTeleport.Client
             response = await GetDataAsync(url);
             if (!string.IsNullOrWhiteSpace(response))
             {
-                _cache.PutCachedData(url, response);
+                _cache.PutCachedData(url, response, _settings.CacheLifeTimeMinutes);
             }
 
             return response;
